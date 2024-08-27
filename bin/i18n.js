@@ -52,10 +52,7 @@ function processDictionaryFile(dictionaryFilePath, options) {
     let templateUpdates = [];
     for (const key in dictionary) {
         let entry = dictionary[key];
-        let metadata = { id: key };
-        if (dictionaryName) {
-            metadata.dictionaryName = dictionaryName;
-        }
+        let metadata = { id: key, dictionaryName };
         if (defaultLanguage) {
             metadata.defaultLanguage = defaultLanguage;
         }
