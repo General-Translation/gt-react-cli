@@ -1,4 +1,4 @@
-# gt-cli
+# gt-react-cli
 
 A CLI tool for processing React dictionary files and sending translations to General Translation services.
 
