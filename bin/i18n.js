@@ -40,6 +40,7 @@ function processDictionaryFile(dictionaryFilePath, options) {
     const apiKey = options.apiKey || process.env.GT_API_KEY;
     const projectID = options.projectID || process.env.GT_PROJECT_ID;
     const dictionaryName = options.dictionaryName;
+    const defaultLanguage = options.defaultLanguage;
     const languages = (options.languages || [])
         .map(language => isValidLanguageCode(language) ? language : getLanguageCode(language))
         .filter(language => language ? true : false);
@@ -54,6 +55,9 @@ function processDictionaryFile(dictionaryFilePath, options) {
         let metadata = { projectID, id: key };
         if (dictionaryName) {
             metadata.dictionaryName = dictionaryName;
+        }
+        if (defaultLanguage) {
+            metadata.defaultLanguage = defaultLanguage;
         }
         let props = {};
         if (Array.isArray(entry)) {
@@ -146,6 +150,7 @@ program
     .option('--dictionaryName <name>', 'Optionally specify a dictionary name for metadata purposes')
     .option('--languages <languages...>', 'List of target languages for translation')
     .option('--override', 'Override existing translations')
+    .option('--defaultLanguage <defaultLanguage>', 'Specify a default language code or name for metadata purposes')
     .action((dictionaryFilePath, options) => {
         const resolvedDictionaryFilePath = resolveFilePath(dictionaryFilePath, [
             './dictionary.js',
