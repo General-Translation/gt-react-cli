@@ -1,0 +1,40 @@
+{
+  "name": "gt-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "i18n": "./bin/i18n.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "General Translation",
+    "gt-react",
+    "i18n",
+    "cli"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "generaltranslation": "^2.0.48",
+    "mock-require": "^3.0.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "gt-react": "^3.1.66"
+  },
+  "devDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "gt-react": "^3.1.66",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/register": "^7.24.6"
+  }
+}
