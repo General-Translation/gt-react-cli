@@ -75,9 +75,7 @@ function processDictionaryFile(dictionaryFilePath, options) {
             } else {
                 wrappedEntry = React.createElement(React.Fragment, null, entry);
             };
-            console.log(wrappedEntry)
             const entryAsObjects = writeChildrenAsObjects(addGTIdentifier(wrappedEntry)); // simulate gt-react's t() function
-            console.log(entryAsObjects)
             templateUpdates.push({
                 override,
                 type: "react",
