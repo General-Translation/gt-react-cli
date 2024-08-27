@@ -31,7 +31,7 @@ i18n dictionary.js
 ### Example
 
 ```bash
-i18n update ./src/dictionary.js --apiKey YOUR_GT_API_KEY --projectID YOUR_GT_PROJECT_ID --languages fr es de
+i18n update ./src/dictionary.js --languages fr es de
 ```
 
 This command will process the `dictionary.js` file, target French, Spanish, and German for translation, and send the results to the General Translation service.
