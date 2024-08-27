@@ -9,7 +9,7 @@ A CLI tool for processing React dictionary files and sending translations to Gen
 To install the `i18n` CLI tool globally using npm, run:
 
 ```bash
-npm install -g gt-cli
+npm install -g gt-react-cli
 ```
 
 This will make the `i18n` command available globally on your system.
