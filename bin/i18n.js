@@ -84,7 +84,6 @@ function processDictionaryFile(dictionaryFilePath, options) {
                 type: "react",
                 data: {
                     children: entryAsObjects,
-                    targetLanguages: languages,
                     metadata: { ...metadata, ...tMetadata }
                 }
             });
@@ -93,7 +92,6 @@ function processDictionaryFile(dictionaryFilePath, options) {
                 type: "intl",
                 data: {
                     content: entry,
-                    targetLanguages: languages,
                     metadata: { ...metadata, ...props }
                 }
             });
@@ -103,7 +101,7 @@ function processDictionaryFile(dictionaryFilePath, options) {
     if (templateUpdates.length) {
         const gt = new GT({ apiKey, projectID });
         const sendUpdates = async () => {
-            const resultLanguages = await gt.updateRemoteDictionary(templateUpdates, projectID, override);
+            const resultLanguages = await gt.updateRemoteDictionary(templateUpdates, languages, projectID, override);
             if (resultLanguages) {
                 console.log(
                     `Remote dictionary updated: ${resultLanguages.length ? true : false}.`,
