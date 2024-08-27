@@ -21,14 +21,7 @@
     "commander": "^12.1.0",
     "dotenv": "^16.4.5",
     "generaltranslation": "^2.0.48",
-    "mock-require": "^3.0.3"
-  },
-  "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "gt-react": "^3.1.66"
-  },
-  "devDependencies": {
+    "mock-require": "^3.0.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "gt-react": "^3.1.66",
