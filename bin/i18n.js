@@ -52,7 +52,7 @@ function processDictionaryFile(dictionaryFilePath, options) {
     let templateUpdates = [];
     for (const key in dictionary) {
         let entry = dictionary[key];
-        let metadata = { projectID, id: key };
+        let metadata = { id: key };
         if (dictionaryName) {
             metadata.dictionaryName = dictionaryName;
         }
@@ -81,7 +81,6 @@ function processDictionaryFile(dictionaryFilePath, options) {
             };
             const entryAsObjects = writeChildrenAsObjects(addGTIdentifier(wrappedEntry)); // simulate gt-react's t() function
             templateUpdates.push({
-                override,
                 type: "react",
                 data: {
                     children: entryAsObjects,
@@ -89,10 +88,8 @@ function processDictionaryFile(dictionaryFilePath, options) {
                     metadata: { ...metadata, ...tMetadata }
                 }
             });
-            
         } else if (typeof entry === 'string') {
             templateUpdates.push({
-                override,
                 type: "intl",
                 data: {
                     content: entry,
@@ -106,7 +103,7 @@ function processDictionaryFile(dictionaryFilePath, options) {
     if (templateUpdates.length) {
         const gt = new GT({ apiKey, projectID });
         const sendUpdates = async () => {
-            const resultLanguages = await gt.updateRemoteDictionary(templateUpdates);
+            const resultLanguages = await gt.updateRemoteDictionary(templateUpdates, projectID, override);
             if (resultLanguages) {
                 console.log(
                     `Remote dictionary updated: ${resultLanguages.length ? true : false}.`,
