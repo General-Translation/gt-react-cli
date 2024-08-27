@@ -1,6 +1,6 @@
 # gt-react-cli
 
-A CLI tool for processing React dictionary files and sending translations to General Translation services.
+A CLI tool for processing React dictionary files and sending translations to General Translation.
 
 ## Installation
 
@@ -16,31 +16,25 @@ This will make the `i18n` command available globally on your system.
 
 ## Usage
 
-### Update Command
-
-The primary command is `update`. This command processes a React dictionary file and sends the translations to General Translation services.
-
 #### Basic Usage
 
 Once installed globally, you can run the command:
 
 ```bash
-i18n update dictionary.js --apiKey YOUR_GT_API_KEY --projectID YOUR_GT_PROJECT_ID --languages en fr es --override
+i18n dictionary.js
 ```
 
-- `dictionary.js`: Path to the dictionary file you want to process.
-- `--apiKey`: Your General Translation API key.
-- `--projectID`: Your General Translation project ID.
-- `--languages`: A list of languages you want to target for translation.
-- `--override`: (Optional) Specify this flag to override existing translations.
+- `dictionary.js` (Optional): Path to the dictionary file you want to process. If not provided, the tool will look for a `dictionary.js` file in the root and `src` directories.
+- `--languages` (Optional): A list of languages you want to target for translation. If not specified, the tool will process all existing languages in the dictionary file (but no additional languages will be added).
+- `--override` (Optional): Specify this flag to override existing translations.
 
 ### Example
 
 ```bash
-i18n update ./src/dictionary.js --apiKey YOUR_GT_API_KEY --projectID YOUR_GT_PROJECT_ID --languages en fr de --override
+i18n update ./src/dictionary.js --apiKey YOUR_GT_API_KEY --projectID YOUR_GT_PROJECT_ID --languages fr es de
 ```
 
-This command will process the `dictionary.js` file, target English, French, and German for translation, and send the results to the General Translation service.
+This command will process the `dictionary.js` file, target French, Spanish, and German for translation, and send the results to the General Translation service.
 
 ### Default Paths
 
