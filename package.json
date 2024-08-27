@@ -1,6 +1,6 @@
 {
   "name": "gt-react-cli",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "main": "index.js",
   "bin": {
     "i18n": "./bin/i18n.js"
